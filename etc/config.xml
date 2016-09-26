@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+	<modules>
+	    <ArteDigital_PDF>
+	        <version>0.0.1</version>
+	    </ArteDigital_PDF>
+	</modules>
+	<global>
+	    <blocks>
+	        <adminhtml>
+	            <rewrite>
+	                <sales_order_view>ArteDigital_PDF_Block_Adminhtml_Sales_Order_View</sales_order_view>
+	                <sales_order_invoice_view>ArteDigital_PDF_Block_Adminhtml_Sales_Order_Invoice_View</sales_order_invoice_view>
+	                <sales_order_shipment_view>ArteDigital_PDF_Block_Adminhtml_Sales_Order_Shipment_View</sales_order_shipment_view>
+	            </rewrite>
+	        </adminhtml>
+	    </blocks>
+	    <models>
+	    	<pdf>
+	    		<class>ArteDigital_PDF_Model</class>
+	    	</pdf>
+		</models>
+		<helpers>
+			<pdf>
+				<class>ArteDigital_PDF_Helper</class>
+			</pdf>
+		</helpers>
+	</global>
+  <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <ArteDigital_PDF before="Mage_Adminhtml">ArteDigital_PDF_Adminhtml</ArteDigital_PDF>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+</config>
